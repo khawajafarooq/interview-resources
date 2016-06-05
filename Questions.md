@@ -1,0 +1,1 @@
+- Q: While calculating the Big O, do we consider the internal working of a function ?  e.g we have list of string and we have to concat them into a single sentence then the complexity is O(n^2)

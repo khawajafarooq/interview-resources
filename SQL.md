@@ -1,0 +1,33 @@
+- RDBMS stands for Relational Database Management System.
+- The data in RDBMS is stored in database objects called tables.
+- A table is a collection of related data entries and it consists of columns and rows.
+- SELECT -> SELECT column_name,column_name FROM table_name WHERE column_name operator value ORDER BY column_name ASC|DESC;
+- Operators: (=) Equal, (<>/!=) Not equal, (>) Greater than, (<) Less than, (>=) Greater than or equal, (<=) Less than or equal, (BETWEEN) Between an inclusive range, (LIKE) Search for a pattern, (IN) To specify multiple possible values for a column
+- ORDER BY -> Ascending by default
+- INSERT -> INSERT INTO table_name (column1,column2,column3,...) VALUES (value1,value2,value3,...);
+- UPDATE -> UPDATE table_name SET column1=value1,column2=value2 WHERE some_column=some_value;
+- DELETE -> DELETE FROM table_name WHERE some_column=some_value; 
+- TOP -> Used to specify the number of records to return. 
+  - MYSQL uses LIMIT -> SELECT * FROM Persons LIMIT 5;
+  - ORACLE use ROWNUM -> SELECT * FROM Persons WHERE ROWNUM <=5;
+- Whildcards ->
+  - % 	A substitute for zero or more characters
+  - _ 	A substitute for a single character
+  - SELECT * FROM Customers WHERE City LIKE '[bsp]%'; -> Select all customers who live in a city starting from b, s OR p
+  - SELECT * FROM Customers WHERE City LIKE '[a-c]%'; -> All customers who live in a city starting from a, b OR c
+- JOINS -> Best explanation -> https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/
+  - INNER JOIN -> Inner join produces only the set of records that match in both Table A and Table B. 
+  - FULL OUTER JOIN -> Full outer join produces the set of all records in Table A and Table B, with matching records from both sides where available. If there is no match, the missing side will contain null.
+  - LEFT OUTER JOIN -> Left outer join produces a complete set of records from Table A, with the matching records (where available) in Table B. If there is no match, the right side will contain null. 
+  - RIGHT OUTER JOIN -> Right outer join produces complete set of records from Table B, with matching records from Table A. If there is no match, the left side will contain null.
+  - CROSS JOIN -> Join everything with everything.   
+- Unique Constraint: that you can have many UNIQUE constraints per table, but only one PRIMARY KEY constraint per table. Unique key can be NULL where as Primary key cannot.
+- Primary Key: The PRIMARY KEY constraint uniquely identifies each record in a database table.
+- UNION vs UNION ALL -> Union only returns distinct results where as Union all returns all.
+- Foreign Key: A FOREIGN KEY in one table points to a PRIMARY KEY in another table.
+- Index -> An index can be created in a table to find data more quickly and efficiently. CREATE INDEX index_name ON table_name(column_name); -> http://odetocode.com/Articles/70.aspx
+  - Non-clustered Index: The column is represented by B Tree data structure and is sorted. Each entry in this data strucure contains the reference to the original row. So, whenever user searches based on the indexed column, B Tree helps in fast searching. When the data is searched, the whole row is found using the reference.
+  - Clustered Index: Instead of saving the index data only and referencing it to the main row. Clustered index contains the whole table in sorted format. So, whenever search is made using this index, the data is returned immediately.
+Views: A virtual/temporary table created using the result of an SQL statement.
+Stored procedure: It is nothing but a bunch of SQL statements that user can use without writing them again and again.
+  
