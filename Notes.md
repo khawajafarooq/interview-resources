@@ -14,28 +14,29 @@ Best source -> https://github.com/bsikander/getting-a-gig
   **Disadvantages**
   - Not dynamically expandable due to fixed size.
   - Insertion/Deletion is slow as other values have to be relocated i.e. O(n)
-    - Consider keeping an array sorted and add unsorted entries.
+    - Example: Consider keeping an array sorted and add unsorted entries.
 
 ## Resizable Array
 - Can be dynamically resized.
   - Typically resizes it self when full.
 - The Resizing Factor determines the next size. i.e. new size = current size * resizing factor
   - Typical resizing factor is 2.
-- Resizing takes O(n). i.e. making a new array with above formula and copy all the objects from previous array to new array.
+- Resizing takes O(n). i.e. making a new array with resizing factor, copy all objects from previous array to new.
 - Resizing happens rarely so the Amortized runtime is still O(1).
-- Total number of copied elements can be determined by backtracking K/2 in a loop backwards. Which is always less than N.
+- Total number of copied elements can be determined by backtracking K/2 in a backwards loop.
+  - Total number of copied elements will always be less than N.
 
 ## Strings
-- String is essentially an immutable array of characters
-- It can be read character by characters
-- Typically, String concatenation is done by originalString += anotherString
-  - As String is immutable, this will create a new String (immutable character array of size originalString+anotherString) and copy both strings into it.
-  - The runtime of this process is O(n). Which becomes O(n^2) if collection of strings (e.g. words) are required to be concatenated into a single string (e.g. sentence).
-- To avoid the overhead of creating a new string with every concatenation, StringBuilder (in Java or similar in other languages) can be used.
+- String is essentially an immutable (fixed size) array of characters.
+- It can be read character by character.
+- Typically, String concatenation is done by originalString += anotherString.
+  - As String is immutable, this will create a new String (of size originalString+anotherString) and copy both strings into it.
+  - The runtime of this process is O(n). Which becomes O(n<sup>2</sup>) if a collection of strings (e.g. words) is required to be concatenated into a single string (e.g. sentence).
+- To avoid the overhead of creating a new string with every concatenation, StringBuilder (in Java, or similar in other languages) can be used.
 ```java
 String []words = new String[]{"This", " is", " an", " example", " of", " string", " concatenation", " in", " Java."};
+StringBuilder sentenceBuilder = new StringBuilder();
 for(String word: words){
-  StringBuilder sentenceBuilder = new StringBuilder();
   sentenceBuilder.append(nextWord);
 }
 String sentence = sentenceBuilder.toString();
