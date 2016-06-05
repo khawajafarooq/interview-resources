@@ -43,17 +43,37 @@ String sentence = sentenceBuilder.toString();
 ```
 
 # Linked List:
-- Data structure to hold data of any type and size
+- Data structure to hold data of any type and size.
+- Types:
+  - Linear (Singly linked-list, Single pointer that points to next element).
+  - Circular (Last node pointer points to head in a singly linked-list).
+  - Doubly linked-list (Each node has two pointers, one for next and previous node respectively).
+  - Doubly circular (Last node points to Head).
+- Provides sequential access to each element.
+- No size limitation.
 
   **Advantages:**
-  - Insertion in O(1).
+  - Insertion in O(1) (at Head or Tail).
   > Insertion consists of two functions Find + insert. Insert is always O(1) but find always makes the difference. If we have the pointer then find is O(1) otherwise find will be O(n) which makes the overall time of insert to be O(n). <-- [Good implementations will  always keep the pointer to the last node](http://stackoverflow.com/questions/1933085/linked-list-insertion-running-time-confusion)
-  - Access is O(n)
+  - Access is O(n).
+  - Better memory management as unwanted elements can be deleted and memory is reclaimed.
 
   **Disadvantages**
-  - Memory waste for extra pointers
+  - Memory waste for extra pointers.
+  - The memory is not contiguous, so Binary search cannot be applied.
 
+## The 'Runner' pointer
+- An extra pointer used to traverse linked-list, normally moves faster, to solve different problems.
+  - Find a mid point of the linked-list.
+  - Determine, whether there is a loop in the linked-list.
 
+## Java specific Implementation
+- LinkedList<E>, doubly linked-list implemented with 'List' & 'Dequeue' interface.
+- Not thread safe.
+- Index based operations are traversed from Head or Tail pointers (Which ever is the closest).
+- Can be made synchronized by creating the linked-list via 'Collection.synchronizeList(new LinkedList(...))'.
+### Fail-fast
+- Fail-fast is the behavior of the iterator to throw an exception is a structural change has been made to the list.
 
 # Concepts:
 - **Constant Time**:
