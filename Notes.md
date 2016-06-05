@@ -72,8 +72,8 @@ String sentence = sentenceBuilder.toString();
 - Not thread safe.
 - Index based operations are traversed from Head or Tail pointers (Which ever is the closest).
 - Can be made synchronized by creating the linked-list via 'Collection.synchronizeList(new LinkedList(...))'.
-### Fail-fast
-- Fail-fast is the behavior of the iterator to throw an exception is a structural change has been made to the list.
+- Fail-fast
+  - Fail-fast is the behavior of the iterator to throw an exception is a structural change has been made to the list.
 
 # Concepts:
 - **Constant Time**:
