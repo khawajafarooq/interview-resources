@@ -46,3 +46,7 @@ When running on a Java virtual machine that is implemented in software on top of
     Java gives you a choice. If you want to access resources of a particular host that are unavailable through the Java API, you can
     write a platform-specific Java program that calls native methods. If you want to keep your program platform independent, however, you
     must access the system resources of the underlying operating system only through the Java API.
+
+###Class Files:
+    The Java class file, by contrast, is a binary file that can be run on any hardware platform and operating system that hosts the Java virtual machine. 
+    
