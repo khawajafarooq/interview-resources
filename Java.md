@@ -75,6 +75,7 @@ As a whole, Java technology leans heavily in the direction of networks, but the 
     dynamic linking
     dynamic extension 
 
+###Points:
 - Platform independence of Java allows Sys admins to easily update programs across network of different host OS.
 
     In addition, the emerging proliferation of network-enabled embedded devices represents another environment in which Java's platform independence is useful. In the workplace, for example, various kinds of embedded devices, such as printers, scanners, and fax machines, are typically connected to the internal network. Network-connected embedded devices have also appeared in consumer domains, such as the home and car. In the embedded world, Java's platform independence can also help simplify system administration. Jini technology, which aims to bring plug and play to the network, simplifies the task of administering a dynamic environment of network-connected embedded devices for both consumers at home and systems administrators at work. Once a device is plugged into the network, it can access other devices attached to the network, and other devices can access it. To achieve this ease of connectivity, Jini-enabled devices exchange objects across the network, a technique that would be impossible without Java's support for platform independence. 
@@ -90,3 +91,15 @@ To address the special requirements of embedded and consumer systems, Sun create
     the Java Personal Platform (for consumer devices)
     the Java Embedded Platform (for embedded devices)
     the Java Card Platform (for SmartCards) 
+
+Eventually, Sun recognized their three subsets wouldn't suffice, and changed their approach to defining API standards for the embedded and consumer worlds. Instead of trying to define one-API-fits-all subsets, such as Personal and Embedded Java, Sun defined a very minimal API set they called the Java 2 Platform, Micro Edition (J2ME). On top of J2ME, Sun planned to facilitate the definition of API subsets by individual industry segments appropriate for their market niche (such as automobile, TV set-top box, screenphone, wireless pagers and cell-phones, personal digital assistents, etc.). Sun called these API subsets "profiles." The old Personal and Embedded platforms become profiles in the new approach. 
+
+At this end of the spectrum, Sun has defined an API superset: the Java 2 Enterprise Edition (J2EE). In addition to the standard Java APIs, the J2EE includes other APIs that are useful in enterprise server environments, such as servlets and Enterprise JavaBeans. 
+
+In the end, Sun's revised approach to defining APIs yielded three basic API sets, which demonstrate the scaleability of the Java Platform:
+
+    Enterprise Edition (J2EE)
+    Standard Edition (J2SE)
+    Micro Edition (J2ME) 
+
+At the high end, the existence of the Enterprise Edition signifies the utility of the Java Platform in high-end servers. In the middle, the Standard Edition carries on the tradition, started by Applets in browsers, of the Java Platform on the desktop. At the low end, the Micro Edition, augmented with industry profiles, shows that the Java Platform can scale down and mold itself to meet the requirements of a great variety of consumer and embedded environments.
