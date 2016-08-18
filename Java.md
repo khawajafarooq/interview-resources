@@ -66,3 +66,11 @@ The class files of the Java API are inherently specific to the host platform. Th
 The Java API is geared towards platform independence and security. For example, Abstract Windows Toolkit (AWT) and Swing are libaries that help you acheive platform independence in UI because the UIs built in these works on all the host operating systems. The look and feel can adapt to the host system but the UI code itself works everywhere. Similary, each API method performs a security check before performing any harmful operation like writing to disk. 
 
 ###Java Programming Language:
+As a whole, Java technology leans heavily in the direction of networks, but the Java programming language is quite general-purpose. The Java language allows you to write programs that take advantage of many software technologies:
+
+    object-orientation
+    multi-threading
+    structured error-handling
+    garbage collection
+    dynamic linking
+    dynamic extension 
