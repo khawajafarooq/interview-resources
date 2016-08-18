@@ -50,3 +50,7 @@ When running on a Java virtual machine that is implemented in software on top of
 ###Class Files:
     The Java class file, by contrast, is a binary file that can be run on any hardware platform and operating system that hosts the Java virtual machine. 
     
+    A Java compiler, by contrast, translates the instructions of the Java source files into bytecodes, the "machine language" of the Java virtual machine. 
+    
+    In a Java class file, byte order is big-endian irrespective of what platform generated the file and independent of whatever platforms may eventually use it. 
+    
