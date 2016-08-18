@@ -62,3 +62,7 @@ The combination of all loaded class files (from your program and from the Java A
 The class files of the Java API are inherently specific to the host platform. The API's functionality must be implemented expressly for a particular platform before that platform can host Java programs. To access the native resources of the host, the Java API calls native methods. As you can see in Figure below, the class files of the Java API invoke native methods so your Java program doesn't have to. In this manner, the Java API's class files provide a Java program with a standard, platform-independent interface to the underlying host. To the Java program, the Java API looks the same and behaves predictably no matter what platform happens to be underneath. Precisely because the Java virtual machine and Java API are implemented specifically for each particular host platform, Java programs themselves can be platform independent. 
 
 ![Platform Independence](http://www.artima.com/insidejvm/ed2/images/fig1-6.gif "Platform Independent")
+
+The Java API is geared towards platform independence and security. For example, Abstract Windows Toolkit (AWT) and Swing are libaries that help you acheive platform independence in UI because the UIs built in these works on all the host operating systems. The look and feel can adapt to the host system but the UI code itself works everywhere. Similary, each API method performs a security check before performing any harmful operation like writing to disk. 
+
+###Java Programming Language:
