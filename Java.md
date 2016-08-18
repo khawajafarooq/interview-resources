@@ -38,3 +38,11 @@ The execution engine is one part of the virtual machine that can vary in differe
 ###Hardware based execution engine: 
 On a Java virtual machine built on top of a chip that executes Java bytecodes natively, the execution engine is actually embedded in the chip. 
 
+###Native Methods:
+When running on a Java virtual machine that is implemented in software on top of a host operating system, a Java program interacts with the host by invoking native methods. In Java, there are two kinds of methods: Java and native. A Java method is written in the Java language, compiled to bytecodes, and stored in class files. A native method is written in some other language, such as C, C++, or assembly, and compiled to the native machine code of a particular processor. Native methods are stored in a dynamically linked library whose exact form is platform specific. While Java methods are platform independent, native methods are not. When a running Java program calls a native method, the virtual machine loads the dynamic library that contains the native method and invokes it. As you can see in Figure below, native methods are the connection between a Java program and an underlying host operating system.
+
+![Native Method Invocation](http://www.artima.com/insidejvm/ed2/images/fig1-4.gif "Native Method Invocation")
+
+    Java gives you a choice. If you want to access resources of a particular host that are unavailable through the Java API, you can
+    write a platform-specific Java program that calls native methods. If you want to keep your program platform independent, however, you
+    must access the system resources of the underlying operating system only through the Java API.
