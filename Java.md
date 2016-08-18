@@ -54,3 +54,7 @@ When running on a Java virtual machine that is implemented in software on top of
     
     In a Java class file, byte order is big-endian irrespective of what platform generated the file and independent of whatever platforms may eventually use it. 
     
+###Java API:
+The Java API is set of runtime libraries that give you a standard way to access the system resources of a host computer. When you write a Java program, you assume the class files of the Java API will be available at any Java virtual machine that may ever have the privilege of running your program. This is a relatively safe assumption because the Java virtual machine and the class files for the Java API are the required components of any implementation of the Java Platform.
+
+
