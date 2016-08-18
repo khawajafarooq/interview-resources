@@ -29,12 +29,12 @@ A Java virtual machine's main job is to load class files and execute the bytecod
 
 The execution engine is one part of the virtual machine that can vary in different implementations. It can be implemented in software and hardware.
 
-Software based execution engines:
+###Software based execution engines:
 
 - Simple execution engine: That just inteprets the bytecode one at a time.
 - Just in Time (JIT): In this scheme, the bytecodes of a method are compiled to native machine code the first time the method is invoked. The native machine code for the method is then cached, so it can be re-used the next time that same method is invoked.
 - Adaptive optimizer: In this approach, the virtual machine starts by interpreting bytecodes, but monitors the activity of the running program and identifies the most heavily used areas of code. As the program runs, the virtual machine compiles to native and optimizes just these heavily used areas. The rest of the of code, which is not heavily used, remain as bytecodes which the virtual machine continues to interpret. This adaptive optimization approach enables a Java virtual machine to spend typically 80 to 90% of its time executing highly optimized native code, while requiring it to compile and optimize only the 10 to 20% of the code that really matters to performance.
 
-Hardware based execution engine: 
+###Hardware based execution engine: 
 On a Java virtual machine built on top of a chip that executes Java bytecodes natively, the execution engine is actually embedded in the chip. 
 
