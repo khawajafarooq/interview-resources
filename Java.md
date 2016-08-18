@@ -103,3 +103,5 @@ In the end, Sun's revised approach to defining APIs yielded three basic API sets
     Micro Edition (J2ME) 
 
 At the high end, the existence of the Enterprise Edition signifies the utility of the Java Platform in high-end servers. In the middle, the Standard Edition carries on the tradition, started by Applets in browsers, of the Java Platform on the desktop. At the low end, the Micro Edition, augmented with industry profiles, shows that the Java Platform can scale down and mold itself to meet the requirements of a great variety of consumer and embedded environments.
+
+- In addition, Sun defines some standard runtime libraries that it considers as optional for the Standard Edition, and calls these Standard Extension APIs. These libraries include such services as telephony, commerce, and media such as audio, video, or 3D. If your program uses libraries from the Standard Extension API, it will run anywhere those standard extension API libraries are available
