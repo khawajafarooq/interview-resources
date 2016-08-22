@@ -27,6 +27,15 @@ Linux is just a kernel. All Linux distributions includes GUI system + GNU utilit
 - cat file1 file2 > file3 -> creates a new file with the content of both
 - cat > file4 -> opens an editor to write text directly and CTRL+D to write the file and end.
 
--
+####File System
+Binaries are  files  that  contain  compiled  source  code  (or  machine  code). In Linux/Unix, they are placed in /bin or /sbin. They are executable on the computer. /bin contains user binaries. These are the executables that user can use to perform different tasks like cd,pwd etc. /sbin binaries are used to manupulate the operating system.
+- /lib is contains all the shared libraries that are used by the executables.
+- /opt is used to store optional softwares. External softwares like hadoop etc
+- /boot contains all the files needed to boot a computer.
+- /etc all the machine specific configuration files are stored here.
+- /home users personal space. Can store anything.
+- /root storage place for data of root user.
+- /tmp is used to store temporary data.
+- /var files that are unpredictable like log files are placed in this directory.
 
 
