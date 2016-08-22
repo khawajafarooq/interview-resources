@@ -38,4 +38,8 @@ Binaries are  files  that  contain  compiled  source  code  (or  machine  code).
 - /tmp is used to store temporary data.
 - /var files that are unpredictable like log files are placed in this directory.
 
+- alias [alias_string]=[command in single quotes] -> example: alias rm='rm -i'  to enable interactive menu for always avoid deleting without confirming.
+- & -> When a line ends with an ampersand & , the shell will not wait for the command to finish. You will get your shell prompt back, and the command is executed in background. You will get a message when this command has finished executing in background.
+- && (logical AND) -> example echo first && echo second -> If the first one succeeds only then the second one is executed.
+- || (logical OR) -> example echo first || echo second -> second command will only be executed if the first one fails.
 
