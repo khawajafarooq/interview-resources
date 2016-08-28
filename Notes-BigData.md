@@ -2,6 +2,123 @@
 * 
 
 ###Apache Spark:
+#####Spark EDX course:
+Scalable, efficient analysis of Big Data
+
+-> Big Data:
+Click, Ad impression, Billing, watching a video, request to a server, transaction, messages. All of this can be recorded and analyzed.
+Also comes from user generated content, Facebook, instagram, twitter, yelp
+Health and scientific computing, Hadron collider peta bytes of data, protein application, genomics
+Social graphs, graph data
+Web server logs
+System logs
+Internet of things
+
+-> Structure Specture:
+Unstructured -> plain text, media
+Semi-structured -> Documents, XML -> Maybe we can infer the type
+Structured -> We know the type of data -> relational dos, 
+
+In spark we have 2 ways how it knows about the schema
+-> dynamically it can infer while reading a row
+-> programmer stoically specifies it.
+
+:: Only 20% of data is sturcuted
+:: Spark works with Sturcutred/Semi-structured data but can also work with unstructured but after ETL process. So, we impose structure on unstructured data.
+:: Problem with Big Data is that data is growing faster than computation speed 
+:: Storage getting cheaper
+
+FB Daily logs -> 60 TB
+Google Web Index -> 10 PB
+Youtube -> 1 PB everyday
+
+-> Challenge is that one machine cannot store and process  all the data. 
+  - Solution: Process on a cluster of machines.
+
+We take data and partition is into multiple machines memory and perform analysis. DataFrame is responsible for this.
+Spark is a computing framework. Provides programming abstraction and parallel runtime to hide complexities of fault tolerance and slow machines.
+
+-> Spark Components:
+Spark SQL, Spark Streaming, GraphX, MLLib and Core Apache Spark
+
+-> Spark Program consists of Driver and Workers
+Driver runs on 1 machine … 
+worker runs on cluster or multiple threads on a local machine
+Data frames are distributed in cluster
+SparkContext is the first object created it tells spark how and where to access a cluster
+
+Master parameter of SparkContext determines the type and size of cluster
+local -> 1 worker thread
+local[k] -> locally with k worker threads
+spark://Host:Port -> runs on a cluster
+mesos://Host:Port -> runs on a Mesos cluster
+
+
+-> Data Frames:
+Primary abstraction in spark
+Once created they are immutable
+You can construct a DF by transforming another DF or loading a data from hfs or file
+
+2 types of operations on DF: Transformation and Actions
+-> Transformation are lazy and only performed when Actions are performed
+-> Can also persist DFs on disk or memory
+
+-> Cycle
+data -> DF ->transformation (select, filter) -> action
+
+-> Spark Transformations:
+Creates new DF from an existing DF
+Lazy evaluation
+
+Useful transformations -> filter, sort, orderby -> distinct -> explode 
+Grouped Transformations -> groupby, agg, count, avg, 
+
+-> Actions
+Actions causes the transformation to executes to get results
+
+show(n), take(n), collect (returns all of the data from all the cluster be careful) ,count, describe (works on numerical columsn) shows the avg, min, max, stddev etc
+
+-> if you apply an action on a DF multiple times, then each time Spark will load the DF from memory and perform the action for each action specified in 
+code. use DF.cache(), this will tell Spark to not recompute and use the cached value.
+
+
+-> Where Spark program runs: At driver or executors or both ?
+so, a=a+1 runs on driver
+linesDF.filter(isComment) -> since DF is distributed and filter needs to be executed on each of them. it is ran on executors
+linesDF.count() -> runs on both. First all counts is ran on DFs and then the result is combined on driver to compute the final result.
+
+
+a = aDF.collect()
+b = bDF.collect()
+newDF=SparkContext.createNewDataFrame(a+b)
+
+Now, first all the data (a and b) from all the machines is sent to the driver. Then we combine the data sets and generate a new DF and it distributed the data back to machines again. This is not a good implementation. So, use unionall. e.g a.unionAll(b). Runs only on executors.
+
+
+
+-> Big data started way earlier but at time we were using a big box with many cores and memories. It was expensive and had its limits. Cloud computing changed everything. Now, we use cheap hardware to build clusters for big data processing but it has its own problems.
+
+	-> Harddrives fail
+	-> Network slower (latency) than sharing memory
+	-> Uneven performance
+
+-> What is hard about cluster computing ?
+	-> divide work across cluster
+	-> how to handle failure
+
+-> Motiviation for Spark
+	Map/Reduce phase read and write from harddrive and it is slow. 
+
+
+——> Spark Job Executation:
+The following happends when a Spark Job is triggered
+	- Catalyst optimizer analyzes the unoptimized query plan and tries to optimize it.
+	- Once it is optimized then multiple physical plans are created. 
+	- It choses the most cost efficient physical plan 
+	- Spark executes the job.
+
+-> newDF.explain(True) can be used to examine the query plan.
+
 -> What is an “RDD Lineage”?
   - The RDDs in Spark, depend on one or more other RDDs. The representation of dependencies in between RDDs is known as the lineage graph. Lineage graph information is used to compute each RDD on demand, so that whenever a part of persistent RDD is lost, the data that is lost can be recovered using the lineage graph information.
   
