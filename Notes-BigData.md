@@ -16,6 +16,9 @@ Linux and Unix experience -> cp command
 
 ###General:
 
+####Typical Big Data Stack:
+![Typical Big Data Stack](https://github.com/bsikander/interview-resources/blob/master/Typical%20Big%20Data%20Stack.png)
+
 -> Q: 4 Vs:
 Volume: 
 Variety: Structured/unstructured
@@ -213,4 +216,6 @@ The following happends when a Spark Job is triggered
     Cluster Manager-A pluggable component in Spark, to launch Executors and Drivers. The cluster manager allows Spark to run on top of other external managers like Apache Mesos or YARN 
   
   
+###Apache Flink:
 
+![Apache Flink](https://github.com/bsikander/interview-resources/blob/master/Flink%20Stack.png)
