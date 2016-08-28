@@ -71,9 +71,16 @@ System logs
 Internet of things
 
 -> RDD vs DataFrame vs Dataset
-RDD: 1.0 slow because of serialization and sending structure and data to different nodes
-DataFrame: 1.3 .. added schema to avoid the serialization
-DataSet 1.6: can do sql style queries
+	
+- **RDD: 1.0** slow because of serialization and sending structure and data to different nodes. Use RDDs when you donot want to impose a schema on data and your data is unstructured.
+- **DataFrame: 1.3** .. added schema to avoid the serialization. Data is organized in columns. Developers can impose schema. Type safety is gone in this API.
+- **DataSet 1.6:** can do sql style queries. Brings the best of both worlds. Has the serialization mechanism of DataFrame and type safety of RDDs. 
+- http://www.agildata.com/apache-spark-rdd-vs-dataframe-vs-dataset/
+
+![DataSet vs DataFrame](https://github.com/bsikander/interview-resources/blob/master/DataSet%20vs%20DataFrame.png)
+
+![RDD vs DataFrame](https://github.com/bsikander/interview-resources/blob/master/RDD%20vs%20DataFrame.png)
+
 
 -> Structure Specture:
 Unstructured -> plain text, media
