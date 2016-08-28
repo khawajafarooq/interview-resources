@@ -23,6 +23,9 @@ Velocity: Frequency of incoming data
 Veracity: Trustworthiness of data
 Value:
 
+http://www.dummies.com/how-to/content/the-4-vs-of-big-data.html
+
+
 -> Q: Apache Kafka
 Publish-scriber model
 Produces -> topics -> consumers
@@ -66,6 +69,11 @@ Social graphs, graph data
 Web server logs
 System logs
 Internet of things
+
+-> RDD vs DataFrame vs Dataset
+RDD: 1.0 slow because of serialization and sending structure and data to different nodes
+DataFrame: 1.3 .. added schema to avoid the serialization
+DataSet 1.6: can do sql style queries
 
 -> Structure Specture:
 Unstructured -> plain text, media
