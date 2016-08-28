@@ -1,6 +1,59 @@
 * [Hadoop and Hama Deployment Guide](http://people.apache.org/~tjungblut/downloads/hamadocs/ApacheHamaInstallationGuide_06.pdf)
 * 
 
+### Questions asked during interview:
+RDD vs Data Frames
+How to put data on HDFS
+Triggers in SQL
+Star schema vs snow flakes
+Count(car_name) join
+What design patterns
+TDD
+Good developer
+Your experience especially big data
+Linux and Unix experience -> cp command
+
+
+###General:
+
+-> Q: 4 Vs:
+Volume: 
+Variety: Structured/unstructured
+Velocity: Frequency of incoming data 
+Veracity: Trustworthiness of data
+Value:
+
+-> Q: Apache Kafka
+Publish-scriber model
+Produces -> topics -> consumers
+Topic -> is a feed to which messages are published. Kafka maintains a partitioned log. 
+Producers -> Publish data to the topic of their choice
+Consumer -> 
+
+Uses -> Website Activity Tracking, Stream Processing, Log Aggregation, Commit log
+
+-> Q: Big data companies ? 
+Hadoop Distributions: 
+Cloudiera: Cloud Management Suite to automate installation process, reduce deployment time, displaying real time nodes. Layers of administrative and management capabilities
+Horton works: All products are completely open source. Horton work data platform, contains most important components of hadoop eco system. Extensive testing, 
+MapR: Replaces HDFS and has its own MapRFS. Enterprise grade features, reliability and easy of use. More production ready
+
+
+-> Q: Comparisons between Hortonworks and Cloudera.
+Both provide enterprise ready distributions. Cloudier is more towards properiotry softwares whereas hortonworks is focused towards open source. 
+
+-> Q: Lambda Architecture
+Hadoop can handle Volume (batch processing) but to handle handle Velocity we need a stream processing engine. Some times we need both systems and a combination of stream and batch is referred to as Lambda architecture
+
+Batch Layer (MapReduce/Spark/Pig)
+Speed Layer (Spark Streaming/ Storm)
+Serving Layer
+
+Technology agnostic, master data is immutable ( so even if the data gets corrupts we can go back)
+- Maintaining 2 complex systems for Batch and Stream processing is very challenging
+https://dzone.com/articles/lambda-architecture-big-data
+
+
 ###Apache Spark:
 #####Spark EDX course:
 Scalable, efficient analysis of Big Data
